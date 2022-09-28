@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #2f363e;
+  background: #000;
 }
 
 .menu {
@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .menu li {
@@ -76,4 +77,43 @@ body {
 
 .menu.active .toggle {
   transform: rotate(315deg);
+  background-color: #000;
+  color: #fff;
 }
+
+.menu.active .toggle::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(-50deg,
+            #ff0202,
+            #ff7b02,
+            #fffc02,
+            #00ff28,
+            #02ffe1,
+            #000aff,
+            #cc00ff,
+            #ff0063);
+    background-size: 400%;
+    border-radius: 50%;
+    filter: blur(1rem);
+    animation: animate 40s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
